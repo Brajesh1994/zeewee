@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>array with loop</title>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const arr = ["volvo", "benz", "mahindra", "honda"]
+        let fln = arr.length;
+        let text = "<ul>";
+        for (let i = 0; i < fln; i++) {
+            text += "<li> " + arr[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+
+    </script>
+</body>
+</head>
+
+</html>
