@@ -9,12 +9,21 @@
     <input id="radius" value="" placeholder="enter radius of circle">
     <button id="btn" onclick="areaCircle()">Find area</button>
     <script>
+        // function areaCircle() {
+        //     let r = document.getElementById("radius").value;
+        //     let rval = console.log(3.14 * r * r);
+        //     console.log("function runing")
+        // }
+
         function areaCircle() {
             let r = document.getElementById("radius").value;
-            let rval = console.log(3.14 * r * r);
+            let rval = 3.14 * r * r;
             console.log("function runing")
+            document.getElementById("demo").innerHTML = rval
+            // return rval
+
         }
-        document.getElementById("demo").innerHTML = "";
+
     </script>
 </body>
 </head>

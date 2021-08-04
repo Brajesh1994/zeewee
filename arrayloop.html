@@ -6,25 +6,46 @@
 
 <body>
     <p id="p1"></p>
-    <button id="btn" onclick="addInArray()">click to add jacob</button>
+    <button id="btn" onclick="click()">click to add jacob</button>
     <p id="p2"></p>
+
+    <ul id="newul"></ul>
     <p id="p3"></p>
     <p id="p4"></p>
     <p id="p5"></p>
     <script>
-        const empnm = ["john", "travis", "xarvis", "cherry", "mickey"]; // Accesing array in li 
-        let empl = empnm.length;                                        // -st through for 
-        let emp = "";                                                   // loop 
-        for (let i = 0; i < empnm.length; i++) {
-            emp += "<li>" + empnm[i];
-            emp += "";
+        const list = ["john", "travis", "xarvis", "cherry", "mickey"]; // Accesing array in li 
+
+        function click() {
+            list.push('jcob')
+            return list
         }
 
-        document.getElementById("p1").innerHTML = emp;
-        function addInArray() {
-            empnm[empnm.length] = "jacob";
-            document.getElementById("p2").innerHTML = empnm;
+        var newlist = click()
+        var data = "";
+        for (var i = 0; i < newlist.length; i++) {
+            data += '<li>' + newlist[i] + '</li>'
+            console.log(data)
         }
+        document.getElementById('newul').innerHTML = data
+
+        // let empl = empnm.length;                                        // -st through for
+        // let emp = "";                                                   // loop 
+        // for (let i = 0; i < empnm.length; i++) {
+        //     emp += empnm[i];
+        //     const li = document.createElement('li')
+        //     const newelm = li.appendChild(emp)
+        //     // emp += "";
+        // }
+
+        // document.getElementById('newul').innerHTML(newelm)
+
+        // console.log(emp)
+        // document.getElementById("p1").innerHTML = emp;
+        // function addInArray() {
+        //     empnm[empnm.length] = "jacob";
+        //     document.getElementById("p2").innerHTML = empnm;
+        // }
 
     </script>
 </body>
