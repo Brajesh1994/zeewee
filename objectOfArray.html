@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array of object</title>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        const city = [];
+        city[0] = "Indore"
+        city[1] = "Bhopal"
+        city[2] = "Ujjain"
+        city[3] = "Dewas"
+        city[4] = "Ratlam"
+        city[5] = "Jabalpur"
+
+        document.getElementById("demo").innerHTML = city;
+        document.getElementById("demo1").innerHTML = city.length;
+        document.getElementById("demo2").innerHTML = city[3];
+
+        const state = [];
+        state["city"] = "indore";
+        state["town"] = "dewas";
+        state["village"] = "ralamandal";
+        document.getElementById("demo3").innerHTML = state;
+        document.getElementById("demo4").innerHTML = state["village"];
+
+    </script>
+</body>
+</head>
+
+</html>

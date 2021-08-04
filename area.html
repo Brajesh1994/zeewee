@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Finding Area of diff shapes</title>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        function areaTriangle(l, b, h) {
+            return "Area Of Triangle" + l * b * h + "<sup>sqm</sup>";
+        }
+        document.getElementById("demo").innerHTML = areaTriangle(7, 5, 5);
+
+        function areaRectangel(length, width) {
+            return "Area Of Rectangle" + " " + length * width + "<sup>sqm</sup";
+
+        }
+        document.getElementById("demo1").innerHTML = areaRectangel(10, 20);
+
+        function areaSquare(s) {
+            return "Area Of Square" + " " + s * s + "<sup>sqm</sup>";
+
+        }
+        document.getElementById("demo2").innerHTML = areaSquare(10);
+
+        function areaCircle(radius) {
+            return "Area Of Circle" + " " + 2 * 3.14 * radius * radius + "<sup>sqm</sup>";
+
+        }
+        document.getElementById("demo3").innerHTML = areaCircle(10);
+
+        function areaCube(s) {
+            return "Area Of Cube" + " " + s * s * s + "<sup>sqm</sup>";
+
+        }
+        document.getElementById("demo4").innerHTML = areaCube(10);
+
+    </script>
+</body>
+</head>
+
+</html>
