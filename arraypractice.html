@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <titile>Practicing Array</titile>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <button onclick="carsp1()">click ro add ferrari</button>
+    <p id="demo5"></p>
+
+    <script>
+        const cars = ["bmw", "honda", "ford", "lexus", "tata", "mg"]
+        document.getElementById("demo").innerHTML = cars; //accessing full array
+        cars[1] = "benz"; //adding in array on 1 index
+        document.getElementById("demo1").innerHTML = cars.length; //gives length of array
+        document.getElementById("demo2").innerHTML = cars; //again printing array after adding at first index
+        document.getElementById("demo3").innerHTML = cars[cars.length - 1]; //gives last element of array
+        function carsp() {
+            cars.push("honda");                             //pushing another element to
+        }                                                  // array through function 
+        carsp();
+        document.getElementById("demo4").innerHTML = cars;
+
+        function carsp1() {
+            cars[cars.length] = "ferrari";                       //adding using length
+            document.getElementById("demo5").innerHTML = cars;   //property
+        }
+    </script>
+</body>
+
+</head>
+
+</html>

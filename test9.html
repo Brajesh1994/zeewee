@@ -36,11 +36,11 @@
         document.getElementById("spi").innerHTML = day;
 
         let officet;
-        switch (new date().gethours()) {
-            case 0(officet == 5): officet = "Break time  "
+        switch (new Date().getHours()) {
+            case (officet < 5): officet = "Break time  "
                 break;
 
-            case 1(officet == 13): officet = "lunch time "
+            case (officet == 13): officet = "lunch time "
                 break;
 
             default: officet = "office time "
