@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculatrice</title>
+
+<body>
+    Number 1:<input id='number1' placeholder="Enter a number" type="text">
+    Number 2: <input id='number2' placeholder="Enter a number" type="text">
+    <select id="sel">
+        <option id="co">Choose operator</option>
+        <option id="a" onclick='Calculatrice'>ADD</option>
+        <option id="s" onclick='Calculatrice'>SUB</option>
+        <option id="m" onclick='Calculatrice'>MUL</option>
+        <option id="d" onclick='Calculatrice'>DIV</option>
+    </select>
+    Total: <input type="text" name="total" id="calculate">
+    <script>
+        var number1 = document.getElementById('number1').value;
+        var number2 = document.getElementById('number2').value;
+        var number3 = parseInt(number1) / parseInt(number2);
+        document.getElementById('calculate').value = number3;
+
+        function Calculatrice(number1, number2, calculate) {
+            switch (calculate) {
+                case '+':
+                    console.log("case +")
+                    return number1 + number2
+                    break;
+                case '-':
+                    return a - b
+                    break;
+                case '*':
+                    return a * b
+                    break;
+                case '/':
+                    return a / b
+                    break;
+            }
+        }
+
+    </script>
+</body>
+</head>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <titile>
+    </titile>
+
+<body>
+    <p id="dos"></p>
+    <button id="btn" onclick="functionSortingN()">Click to sort Array</button>
+    <button id="btn1" onclick="functionPop()">Click to apply pop on array</button>
+    <button id="btn2" onclick="functionpush()">Click to see push in array</button>
+
+    <script>
+        const points = [9, 19, 58, 46, 20, 30, 40, 79, 68,];
+        document.getElementById("dos").innerHTML = points;
+        function functionSortingN() {
+            points.sort();
+            document.getElementById("dos").innerHTML = points;
+
+        } function functionPop() {
+            points.pop();
+            document.getElementById("dos").innerHTML = points;
+
+        } function functionpush() {
+            points.push(3);
+            document.getElementById("dos").innerHTML = points
+
+        }
+        function functionUs(params) {
+
+        }
+
+    </script>
+</body>
+</head>
+
+</html>
