@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> To Do List</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="name" class="output">
+        <input type="button" value="add" id="but" class="btn" onclick="addMore()">
+        <ul id="box">Task Added</ul>
+        <ul id="box1">Task Deleted</ul>
+        <br>
+        <span id="error"></span>
+    </div>
+
+</body>
+<script>
+    function addMore() {
+        document.getElementById("error").innerHTML = ""
+        let name = document.getElementById("name").value
+        if (name == "") {
+            document.getElementById("error").innerHTML = "Please Add Task";
+        } else {
+            let box = document.getElementById("box");
+            let li = document.createElement("li");
+            li.textContent = name;
+
+            let a = document.createElement("a");
+            a.textContent = "Delete"
+            a.href = "javascript:void(0)"
+            li.appendChild(a);
+
+            let pos = box.firstElementChild;
+            if (pos == null) {
+                box.appendChild(li);
+
+            } else {
+                box.insertBefore(li, pos);
+            }
+
+        }
+
+        document.getElementById("name").value = "";
+    }
+    let btn = document.querySelector("ul");
+    btn.addEventListener("click", function (e) {
+        let box = document.getElementById("box");
+        let li = e.target.parentNode;
+        box.removeChild(li);
+        let box1 = e.target.parentNode;
+        console.log(box1);
+        // document.getElementById("box1").innerHTML = "";
+
+
+    })
+
+</script>
+
+</html>

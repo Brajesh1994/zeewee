@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My ToDO List
+    </title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <p id="op"></p>
+    <button id="btn" onclick=" comingInput()">Add Task</button>
+    <button id="btn1" onclick=" deleteTask()">Delete Task</button>
+    <script>
+
+        function comingInput() {
+            let cin = document.getElementById("input").value;
+
+            document.getElementById("op").innerHTML = cin;
+            console.log(cin);
+
+        }
+        function deleteTask() {
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
