@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        ToDo List
+    </title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    .container {
+        text-align: center;
+        padding: 20px;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="addTask">
+            <input type="text">
+            <button class="btn btn-primary">Add</button>
+        </div>
+
+        <ol class="del">
+            <h3>To Do List</h3>
+        </ol>
+        <ol class="todo">
+            <h3>Deleted List</h3>
+        </ol>
+
+    </div>
+
+    <script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('.addTask > button');
+
+        btn.addEventListener('click', addList);
+        input.addEventListener('keyup', (e) => {
+            (e.keyCode === 13 ? addList(e) : null);
+        })
+
+        function addList(e) {
+            const deleting = document.querySelector('.del');
+            const todo = document.querySelector('.todo');
+
+            const newLi = document.createElement('li');
+            const delBtn = document.createElement('button');
+            delBtn.innerHTML = 'Delete Task';
+
+            if (input.value !== '') {
+                newLi.textContent = input.value;
+                input.value = '';
+                newLi.appendChild(delBtn);
+                deleting.appendChild(newLi);
+
+            }
+
+            delBtn.addEventListener('click', function () {
+                const parent = this.parentNode;
+                parent.remove();
+                todo.appendChild(parent);
+                delBtn.style.display = 'none';
+            });
+        }
+
+    </script>
+</body>
+
+</html>
