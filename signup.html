@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sign Up Page
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-success text-center">Sign up Here</h3>
+        <div class="col-lg-4 m-auto d-block">
+            <form action="#" onsubmit="return validation()">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="fname" id="fname" class="form-control">
+                    <span id="errorf" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lname" id="lname" class="form-control">
+                    <span id="errorl" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="number" name="mobile" id="mobile" class="form-control">
+                    <span id="errorm" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                    <span id="errore" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>password</label>
+                    <input type="text" name="password" id="password" class="form-control">
+                    <span id="errorp" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Confirm password</label>
+                    <input type="text" name="cpassword" id="cpassword" class="form-control">
+                    <span id="errorc" class="text-danger font-weight-bold "></span>
+                </div>
+                <br>
+                <input type="submit" name="submit" value="submit" class="btn btn-success">
+
+                <script>
+                    function validation() {
+                        var first = document.getElementById("fname").value;
+                        var last = document.getElementById("lname").value;
+                        var mobile = document.getElementById("mobile").value;
+                        var email = document.getElementById("email").value;
+                        var password = document.getElementById("password").value;
+                        var cPassword = document.getElementById("cpassword").value;
+
+                        switch (true) {
+
+                            case "first":
+
+                                if (first == "") {
+                                    document.getElementById("errorf").innerHTML = "please enter your Name"
+
+                                }
+                            case "last":
+
+                                if (last == "") {
+                                    document.getElementById("errorl").innerHTML = "please enter your Last Name"
+
+                                }
+                                return true
+                        }
+
+
+                    }
+
+                </script>
+</body>
+
+</html>
