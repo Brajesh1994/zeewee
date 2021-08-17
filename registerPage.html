@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>
         Register Page
@@ -64,6 +63,10 @@
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
             var cPassword = document.getElementById("cpassword").value;
+            
+            var myRegEx = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+            var isValid = (myRegEx.test(password));
+
 
 
             if (first == "") {
@@ -118,10 +121,16 @@
                 document.getElementById("errorp").innerHTML = "Please enter password"
                 return false;
             }
-            if ((password.length <= 3) || (password.length > 15)) {
-                document.getElementById("errorp").innerHTML = "Please enter Character between 3 to 15"
+            if ((password.length <= 8) || (password.length > 16)) {
+                document.getElementById("errorp").innerHTML = "Please enter Character between 8 to 16"
                 return false;
             }
+            if (!isValid) {
+                document.getElementById("errorp").innerHTML = "Please enter alphanumeric value with special character"
+                return false;
+
+            }
+
 
             if (cPassword == "") {
                 document.getElementById("errorc").innerHTML = "Please Reconfirm Password"
