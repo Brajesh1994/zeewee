@@ -1,0 +1,101 @@
+<!-- let srchresult = data.filter(data => {
+return data.title.toLowerCase().includes(term);
+newArray = newArray.push(data); -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="return false">
+            <div class="search-box">
+
+                <input type="text" class="search-by-name" name="name">
+                <!-- <button class="search-btn" type="submit">search</button> -->
+
+                <p id="demo"></p>
+            </div>
+
+    </div>
+    </form>
+    <script>
+        fetch('https://fakestoreapi.com/products').then(response => {
+            response.json().then(data => {
+                console.log(data)
+
+                if (data.length > 0) {
+                    var temp = "";
+
+                    data.forEach((u) => {
+                        temp += '<div class="card" style="margin-bottom:30px; border:2px solid black">';
+                        temp += '<div class="card-body" ><img src=' + u.image + ' style="width:200px;height:200px"></div>';
+                        temp += '<div class="card-body" >' + u.id + '</div>';
+                        temp += '<div class="card" id="mytit">' + u.title + '</div>';
+                        temp += '<div class="card-body" id="des" >' + u.description + '</div>';
+                        temp += '<div class="card-body" >' + u.category + '</div>';
+                        temp += '<div class="card-body">' + u.price + '</div></div>';
+                    })
+
+                    document.getElementById('demo').innerHTML = temp;
+
+                    var newArray = [];
+                    const nameform = document.querySelector('.search-box');
+                    nameform.addEventListener('input', event => {
+                        const term = event.target.value.toLowerCase()
+
+                        data.forEach((v) => {
+                            var d = v.title.toLowerCase();
+                            if (d.includes(term)) {
+                                if (term.length > 3) {
+                                    document.getElementById("mytit").innerHTML = (v.title);
+                                }
+                                else {
+
+                                }
+                            }
+
+                        })
+                        // for filter
+
+                        let srchresult = data.filter(data => {
+                            return data.title.toLowerCase().includes(term);
+                            newArray = newArray.push(data);
+
+                        })
+                        //searching result 
+
+                        var temp_ = "";
+                        srchresult.forEach((k) => {
+
+                            temp_ += '<div class="card" style="margin-bottom:30px; border:2px solid black">';
+                            temp_ += '<div class="card-body" ><img src=' + k.image + ' style="width:200px;height:200px"></div>';
+                            temp_ += '<div class="card-body" >' + k.id + '</div>';
+                            temp_ += '<div class="card" id="mytit">' + k.title + '</div>';
+                            temp_ += '<div class="card-body" id="des" >' + k.description + '</div>';
+                            temp_ += '<div class="card-body" >' + k.category + '</div>';
+                            temp_ += '<div class="card-body">' + k.price + '</div></div>';
+                        });
+                        document.getElementById('demo').innerHTML = temp_;
+
+                    })
+                }
+
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>
