@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<title>
+    Api In Table Format
+</title>
+
+<body>
+    <div class="container">
+        <br>
+        <div>
+            <label>Sort Product Using Price</label><input id="sortIn" type="number">
+            <label>Filter Product Using Name</label><input id="filterIn" type="text">
+        </div>
+        <br>
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Image</th>
+
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <script>
+        fetch('data.json').then(response => {
+            response.json().then(data => {
+                //console.log(data)
+
+                const myData = data;
+                console.log(myData)
+
+                if (data.length > 0) {
+                    var temp = "";
+                    data.forEach((u) => {
+                        temp += "<tr>";
+                        temp += "<td>" + u.id + "</td>";
+                        temp += "<td>" + u.title + "</td>";
+                        temp += "<td>" + u.price + "</td>";
+                        temp += "<td>" + u.description + "</td>";
+                        temp += "<td>" + u.category + "</td>";
+                        temp += "<td>" + u.image + "</td>";
+
+
+                    });
+
+                    document.getElementById("data").innerHTML = temp;
+
+
+
+
+
+                }
+
+            });
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>

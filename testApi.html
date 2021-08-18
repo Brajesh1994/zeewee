@@ -21,7 +21,7 @@ newArray = newArray.push(data); -->
             <div class="search-box">
 
                 <input type="text" class="search-by-name" name="name">
-                <!-- <button class="search-btn" type="submit">search</button> -->
+                <button class="search-btn" type="submit">search</button>
 
                 <p id="demo"></p>
             </div>
@@ -48,16 +48,22 @@ newArray = newArray.push(data); -->
 
                     document.getElementById('demo').innerHTML = temp;
 
+
+
+
+
                     var newArray = [];
                     const nameform = document.querySelector('.search-box');
                     nameform.addEventListener('input', event => {
                         const term = event.target.value.toLowerCase()
+
 
                         data.forEach((v) => {
                             var d = v.title.toLowerCase();
                             if (d.includes(term)) {
                                 if (term.length > 3) {
                                     document.getElementById("mytit").innerHTML = (v.title);
+
                                 }
                                 else {
 
